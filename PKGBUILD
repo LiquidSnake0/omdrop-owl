@@ -10,7 +10,7 @@
 # pkgrel on main publishes it (.github/workflows/release.yml).
 pkgname=omdrop-owl
 pkgver=0.2.0
-pkgrel=1
+pkgrel=2
 pkgdesc="AirDrop radio backend for omdrop on non-Broadcom Wi-Fi: AWDL in userspace through OWL"
 arch=('x86_64' 'aarch64')
 url="https://github.com/t4t5/omdrop-owl"
@@ -30,10 +30,10 @@ install="${pkgname}.install"
 # Keep in step with ./pins (prepare() checks).
 _owl_commit=832d70f815c3d4a06a02117bf0fc5e868daa1ff0
 _omdrop_awdl_commit=534f91a525337951ca19c311e53d333bd6d55100
-source=("owl::git+https://github.com/jedbillyb/owl.git#commit=${_owl_commit}"
+source=("owl::git+https://github.com/LiquidSnake0/owl.git#commit=${_owl_commit}"
         "googletest::git+https://github.com/google/googletest.git"
         "radiotap::git+https://github.com/radiotap/radiotap-library.git"
-        "omdrop-awdl::git+https://github.com/brentkearney/omdrop-awdl.git#commit=${_omdrop_awdl_commit}")
+        "omdrop-awdl::git+https://github.com/LiquidSnake0/omdrop-awdl.git#commit=${_omdrop_awdl_commit}")
 sha256sums=('SKIP' 'SKIP' 'SKIP' 'SKIP')
 
 # omdrop-awdl's radio-independent tools, installed unmodified beside our

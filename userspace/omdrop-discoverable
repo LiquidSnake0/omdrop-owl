@@ -203,7 +203,10 @@ exclusive_up() {  # STA PHY FREQ...
     monitor_up "$sta" "$phy" "$@"
     return
   fi
-  if ! has_ibss "$phy"; then
+  # $CONF/cell-ap forces the hidden-AP cell on a card that does have ad-hoc
+  # mode: the Intel 8265's firmware stalls its transmit queue and resets with
+  # an ad-hoc cell beside the monitor vif (LiquidSnake0 fork).
+  if [ -e "$CONF/cell-ap" ] || ! has_ibss "$phy"; then
     ap_cell "$sta" "$phy" "$@"
     return
   fi

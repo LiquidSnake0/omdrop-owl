@@ -33,7 +33,7 @@ set -eu
 
 ROOT=$(cd "$(dirname "$0")/.." && pwd)
 DIR=$ROOT/upstream/owl
-OWL_REPO=https://github.com/jedbillyb/owl.git
+OWL_REPO=https://github.com/LiquidSnake0/owl.git
 . "$ROOT/pins"
 
 # Asked of the compiler, not /usr/include: Nix keeps headers elsewhere.
